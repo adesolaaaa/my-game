@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <title id="title">G29 </title>
+</head>
+<body>
+  
+    <h1 id="welcome" style="color: #0000FF; text-align: center;">Welcome to word search!!</h1>
+<div id="errorBox"></div>
+<div id="loginForm" class="container">
+    <div class="row justify-content-center form-group">
+        <h2 id="login">Login</h2>
+        <form onSubmit="return addUser(event)">
+            <div class="form-group">
+                <div>
+                    <label for="username" id="real_username">Enter Username:</label>
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+                </div>
+            </div>
+            <div id="loginError"></div>
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="container" id="lobby">
+    <div class="row box1">
+        <div id="playerList">
+            <h2>Player List</h2>
+            <div id="playerList"></div>
+        </div>
+        <div class="lobby" id="lobbyOne">
+            2 Players:
+            <button class="btn btn-primary" onClick="joinLobby(0)">Join Lobby</button>
+            <div id="lobbyOnePlayers"></div>
+        </div>
+        <div class="lobby" id="lobbyTwo">
+            3 Players:
+            <button class="btn btn-primary" onClick="joinLobby(1)">Join Lobby</button>
+            <div id="lobbyTwoPlayers"></div>
+        </div>
+        <div class="lobby" id="lobbyThree">
+            4 Players: 
+            <button class="btn btn-primary" onClick="joinLobby(2)">Join Lobby</button>
+            <div id="lobbyThreePlayers"></div>
+        </div>
+        <div class="chat">
+            <h2>Chat &#x1F4AC;</h2>
+            <div id="chatBox"></div>
+            <form onSubmit="return addChat(event)">
+                <div class="form-group">
+                    <div>
+                        <label for="message" id="real_message">Message:</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" id="message" placeholder="Enter Message" name="message" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit1">Submit</button>
+            </form>
+        </div> 
+    </div> 
+    <div class="row box2">
+        <div id="userInfoLobby">
+            <h3 id="usernameLobby"></h3>
+            <p id="scoreLobby"></p>
+        </div>
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <div id="leaderboard"></div>
+        </div> 
+    </div> 
+</div>
+              
+<div class="container" id="game">
+    <div class="row box1">
+        <div>
+            <div id="stats" style="display: flex;">
+                Timer:
+                <div id="timer"></div>
+                &nbsp;Density:
+                <div id="density"></div>
+                &nbsp;Time To Create:
+                <div id="timeToCreate"></div>
+                &nbsp;Intersections:
+                <div id="intersections"></div>
+                &nbsp;Uniformity:
+                <div id="uniformity"></div>
+            </div>
+            <button onClick="toggleStats()">Toggle</button>
+            <div id="gameGrid"></div>
+            <div>
+                <h3>Words Remaining:</h3>
+                <div id="wordList"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row box2">
+        <div id="userInfoGame">
+            <h3 id="usernameGame"></h3>
+            <p id="scoreGame"></p>
+        </div>
+        <div id="gameLeaderboard"></div>
+    </div>
+</div>
+
+
+<script src="utils.js"></script>
+<script src="request.js"></script>
+<script src="response.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
